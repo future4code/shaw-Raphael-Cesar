@@ -1,0 +1,2 @@
+# Aprendizados da semana
+ Essa é a primeira semana de curso da labenu, tivemos aula sobre a diversidade e contratos. Fomos apresentados ao slack, gitbash, **github** e agora ao vscode; e tivemos aulas e atividades sobre o uso do gitbasg e github.
