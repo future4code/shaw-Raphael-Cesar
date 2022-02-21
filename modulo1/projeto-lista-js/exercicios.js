@@ -1,5 +1,5 @@
 // EXEMPLOS DE IMPLEMENTAÇÃO ---------------------------------------------------------------
-
+/*
 // EXERCÍCIO 0A
 function soma(num1, num2) {
   // implemente sua lógica aqui
@@ -106,14 +106,13 @@ function retornaPrimeiroElemento(array) {
 // EXERCÍCIO 10
 function retornaUltimoElemento(array) {
   // implemente sua lógica aqui
-
+ 
 }
 
 // EXERCÍCIO 11
 function trocaPrimeiroEUltimo(array) {
   // implemente sua lógica aqui
 
-}
 
 // EXERCÍCIO 12 
 function checaIgualdadeDesconsiderandoCase(string1, string2) {
@@ -126,17 +125,32 @@ function checaIgualdadeDesconsiderandoCase(string1, string2) {
 // EXERCÍCIO 13 
 function checaRenovacaoRG() {
   // implemente sua lógica aqui
-
+ const anoAtual = prompt("Digite o ano atual!")
+ const anoDoNascimento = prompt("Digite o ano de nascimento!")
+ const anoEmissao = prompt("Digite o ano da emissao da rg!")
+ const idade = anoAtual - anoDoNascimento
+ const validadeDeRg = anoAtual - anoEmissao
+ 
+ renova = (idade <= 20 && validadeDeRg >= 5) || ((idade > 20 && idade <= 50) && validadeDeRg) || (idade > 50 && validadeDeRg >= 15)
+console.log(renova)
 }
+
+
+
 
 // EXERCÍCIO 14
-function checaAnoBissexto(ano) {
+//function checaAnoBissexto(ano) {
   // implemente sua lógica aqui
 
-}
+//}
 
 // EXERCÍCIO 15
 function checaValidadeInscricaoLabenu() {
   // implemente sua lógica aqui
+const idade = prompt(" voce tem mais de 18 anos? sim ou nã0")
+const ensinoMedio = prompt("Possui ensimo medio? sim ou não?")
+const disponibilidade = prompt("Possue disponibilidade? sim ou não?")
 
-} 
+resultado = idade || ensinoMedio || disponibilidade
+console.log(resultado)
+}*/
