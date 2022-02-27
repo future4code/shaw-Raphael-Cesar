@@ -26,8 +26,8 @@ let computadorC2 = comprarCarta()
 let somaComputador = computadorC1.valor + computadorC2.valor   
 
 
-console.log(`Você - cartas: ${usuarioCompra1.texto} ${usuarioCompra2} - pontuação - ${somaDaCompra}`)
-console.log(`Você - cartas: ${computadorC1.texto} ${computadorC2} - pontuação - ${somaComputador}`)
+console.log(`Você - cartas: ${usuarioCompra1.texto} ${usuarioCompra2.texto} - pontuação - ${somaDaCompra}`)
+console.log(`Você - cartas: ${computadorC1.texto} ${computadorC2.texto} - pontuação - ${somaComputador}`)
 
 if (somaDaCompra > somaComputador){
    console.log("você venceu!")
