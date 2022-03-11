@@ -1,0 +1,58 @@
+h1{
+    color:rgb(15, 196, 15);
+    background-color: rgb(4, 4, 71);
+}
+
+.camisa{
+    color:rgb(15, 196, 15);
+    background-color:rgb(4, 4, 71);
+    height: 30px;
+    }
+
+div{
+    background-color:rgb(4, 4, 71);
+   color: rgb(15, 196, 15)
+}
+
+a{
+    color:rgb(15, 196, 15);
+    margin-right: 20px;
+    
+}
+
+p{
+    color:yellowgreen;
+}
+ table{
+     background-color:rgb(4, 4, 71) ;
+     width: 30px;
+     height: 80px;
+     display: block;
+ }
+
+ h2{
+     color:rgb(15, 196, 15);
+     background-color:rgb(4, 4, 71) ;
+     height: 80px;
+ }
+
+ tr{
+    color:rgb(15, 196, 15);
+    background-color:rgb(4, 4, 71);
+    height: 30px;
+ }
+button{
+    display: block;
+    background-color: gray;
+
+}
+ form{
+     height: 30px;
+ }
+ ol{
+    background-color:rgb(4, 4, 71);
+    color:rgb(15, 196, 15);
+    
+ }
+ 
+ 
