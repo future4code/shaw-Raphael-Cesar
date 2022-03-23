@@ -1,0 +1,14 @@
+a{
+    color: rgb(13, 13, 236);
+    
+        margin-top: 5px;
+        margin-bottom: 6px;
+        margin-left: 10px;
+        margin-right: 8px;
+        color: rgb(255, 255, 6);
+        font-size: 20px;
+        
+}
+body{
+    background-color:grey;
+}
