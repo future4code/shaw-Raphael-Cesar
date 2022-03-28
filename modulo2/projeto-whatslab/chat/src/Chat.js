@@ -3,15 +3,25 @@ import styled from "styled-components"
 
 const ChatContainer = styled.div`
   display: flex;
+  color:rgb(61, 241, 25);
+  padding: 1rem;
+  background-color:rgb(7, 87, 80);
+  
 `
 
 const UserInput = styled.input`
-  width: 100px;
+  width: 90px;
+  height:40px;
+  
 `
 
 const TextInput = styled.input`
   flex: 1;
+  
+  
+ 
 `
+
 
 export class Chat extends React.Component {
   constructor(props) {
@@ -44,6 +54,7 @@ export class Chat extends React.Component {
 
   render() {
     return (
+      
       <ChatContainer>
         <UserInput type="text" placeholder={'Usuário'} onChange={this.onChangeUser} value={this.state.userValue}/>
         <TextInput type="text" placeholder={'Mensagem'} onChange={this.onChangeText}  value={this.state.textValue}/>
