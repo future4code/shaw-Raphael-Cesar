@@ -1,29 +1,39 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default class etapa1 extends React.Component {
+import styledComponents from "styled-components";
 
-  const [nome] = useState('Qual o seu nome?')
-  const [idade] = useState('Qual a sua idade?')
-  const [email] = useState('Qual o seu Email?')
+const etapa1 = styled.div`
+   display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 200px;
+    margin: 8px;
+`
+  
 
- return (
-    <div>
-        <><label> Qual o seu nome?</label><input
-            type="text"
-            name="fnome"
-            value={nome}
-            onChange={(e) => setNome(e.target.value)} /><label> Qual a sua idade?</label><input
-                type="text"
-                name="fidade"
-                value={idade}
-                onChange={(e) => setIdade(e.target.value)} /><label> Qual o seu Email?</label><input
-                type="text"
-                name="femail"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)} /><label>Qual a sua escolariedade?</label></>
 
-      
-    </div>
-  );
+
+
+class Etapa1 extends React.Component {
+  render() {
+    return (
+      <div>
+        <h3>ETAPA 1 - DADOS GERAIS</h3>
+        <PerguntaAberta pergunta={"1. Qual o seu nome?"} />
+        <PerguntaAberta pergunta={"2. Qual sua idade?"} />
+        <PerguntaAberta pergunta={"3. Qual seu email?"} />
+        <PerguntaOpcoes
+          pergunta={"4. Qual a sua escolaridade?"}
+          opcoes={[
+            "Ensino médio incompleto",
+            "Ensino médio completo",
+            "Ensino superior incompleto",
+            "Ensino superior completo"
+          ]}
+        />
+      </div>
+    );
+  }
 }
 
+export default Etapa1;
