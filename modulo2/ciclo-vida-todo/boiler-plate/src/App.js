@@ -32,10 +32,11 @@ class App extends React.Component {
 
   componentDidMount() {
     const tarefasString = localStorage.getItem("tarefas");
-    if (tarefasString) {
-      const tarefas = JSON.perse(tarefasString);
-      this.state({ tarefas})
-    }
+      if (tarefasString) {
+        const tarefas = JSON.parse(tarefasString);
+        this.setState({tarefas} );
+          
+      } 
   };
 
   onChangeInput = (event) => {
@@ -96,13 +97,23 @@ class App extends React.Component {
 
         <InputsContainer>
           <label>Filtro</label>
-          <select value={this.state.filtro} onChange={this.onChangeFilter}>
+          <select value={this.state.filter} onChange={this.onChangeFilter}>
             <option value="">Nenhum</option>
             <option value="pendentes">Pendentes</option>
             <option value="completas">Completas</option>
           </select>
         </InputsContainer>
         <TarefaList>
+          {this.state.tarefas.filter (tarefa =>{
+              switch (this.state.filter){
+                case "pendetes":
+                  return !tarefa.completa;
+                case "completas":
+                  return tarefa.completa;
+                default:
+                    return 
+              }
+          })}
           {listaFiltrada.map(tarefa => {
             return (
               <Tarefa
