@@ -1,64 +1,39 @@
 import React from "react";
-import axios from "axios";
+import Cadastro from "./componentes/Cadastro";
+import ListaDeUsuario  from "./componentes/ListaDeUsuario";
 
- class App extends React.Component {
+
+ export default class App extends React.Component {
   state = {
-    user: [],
-    inputNome: "" ,
-    inputEmail: ""
-
+    telaAtual: "cadastro"
+    
   };
-
-  onChangeEmail = (event) => {
-    this.setState({inputEmail: event.target.value})
-  }
-
-  onChangeNome = (event) => {
-    this.setState({inputNome: event.Target.value})
-  }
-
-  createUser = () => {
-    const body = {
-      nome: this.state.inputNome,
-      email: this.state.inputEmail
+  tela = () => {
+    switch(this.state.telaAtual){
+      case "cadastro":
+        return <Cadastro irParaLista={this.irParaLista}/>
+      case "Lista":
+        return <ListaDeUsuario irParaCadastro={this.irParaCadastro}/>
+      default:
+         return <div>Erro! Pagina não encontrada</div>
+      
     }
-    axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
-    body,{
-      headers:{
-        Authorization: "Raphael-cesar-shaw"
-      }
-    }
-    ).then((resposta) =>{
-      console.log(resposta.data)
-    }).catch((error) => {
-      console.log(error.message);
-    });
   }
-  render() {
+
+  irParaCadastro = () => {
+    this,this.setState({telaAtual: "cadastro"})
+  }
+  
+  irParaLista = () => {
+    this.setState({telaAtual: "Lista"})
+  }
+
+  render (){
     return (
       <div>
-        <label>
-          Email:
-          <input
-          placeholder=""
-          value={this.state.inputEmail}
-          onChange={this.onChangeEmail}
-          />
-        </label>
-        <br/>
-        <label>
-          Nome:
-          <input
-           placeholder= ""
-           value={this.state.inputNome}
-           onChange={this.onChangeNome}
-         />
-        </label>
-        <br/>
-        <button onClick={this.createUser}>Concluir</button>
-        
+        {this.tela()}
       </div>
-    );
+    )
   }
-}
-export default App;
+
+ } 
