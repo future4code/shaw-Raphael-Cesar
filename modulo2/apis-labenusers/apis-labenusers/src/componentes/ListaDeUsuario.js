@@ -1,12 +1,20 @@
 import React from "react";
 import axios from "axios"
 import styled from "styled-components";
+import userEvent from "@testing-library/user-event";
 
-const cardUsuario =styled.div`
-
+const CardUsuario =styled.div`
+     border: 1px solid black;
+     padding: 10px;
+     width: 200px;
+     display: flex;
+     justify-content: space-between;
 `
 export default class ListaDeUsuario extends React.Component{
 
+    state = {
+        usuario: []
+    }
     componentDidMount() {
         this.pegarUsuarios()
     }
@@ -17,10 +25,10 @@ export default class ListaDeUsuario extends React.Component{
             headers: {
                 Authorization: "Raphael-cesar-shaw"
             }
-        }).then( () => {
+        }).then((res) => {
             this.setState({usuario: res.data })
         })
-        .catch(()=>{
+        .catch((err)=>{
             alert("Erro,tente novamente!")
 
         })
@@ -31,31 +39,34 @@ export default class ListaDeUsuario extends React.Component{
                headers:{
                 Authorization: "Raphael-cesar-shaw"
                }
-           }).then( () => {
+           })  
+            .then((res) => {
             alert("Usuario deletado")
             this.pegarUsuarios()
-        })
-        .catch(()=>{
+           })
+            .catch((err) =>{
             alert("Erro,tente novamente!")
-        })
-    render() 
-        const ListaDeUsuario = this.state.usuario.map(() =>{
-            return
-            (
-            <cardUsuario key={user.id}>
-                {user.nome}
-                <button onClick={() => this.deletarUsuiario(user.id)}>x</button>
-            </cardUsuario>
+           })
+        }
+
+    render() {
+        const listaUsuarios = this.state.usuarios.map((user) => {
+            return (
+                <CardUsuario key={user.id}>
+                    {user.name}
+                    <button onClick={() => this.deletarUsuario(user.id)}>X</button>
+                </CardUsuario>
             )
         })
-        return(
-            <divi>
-                <button onClick={this.props.irParaCadastro}> ir para Lista de Usuarios</button>
-                <h2> Lista de Usuarios</h2>
-                {ListaDeUsuario}
-            </divi>
+
+        return (
+            <div>
+                <button onClick={this.props.irParaCadastro}>Ir para Cadastro</button>
+                <h2>Lista de Usuários</h2>
+                {listaUsuarios}
+            </div>
         )
-            
-        
     }
+        
+        
 }
