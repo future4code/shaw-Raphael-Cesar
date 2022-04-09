@@ -10,6 +10,7 @@ justify-self: center;
 const Musicbox = styled.div`
 justify-self: center;
 display: grid;
+
 `
 const BackBut = styled.button`
 margin-top: 10px;
@@ -35,7 +36,7 @@ export default class Details extends React.Component{
           <p>Música: {track.name}</p>
           <p>Artista: {track.artist}</p>
 
-          <audio src={track.url} controls/>
+          <AudioPlayer controls><source src={music.url}/></AudioPlayer>
 
         </Div>
       })
