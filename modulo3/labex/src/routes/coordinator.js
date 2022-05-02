@@ -1,33 +1,33 @@
-import { useNavigate } from "react-router-dom";
+
 
 export const goToHomePage = (navigate) => {
-    navigate("/")
+    navigate.push("/")
     }
 
 export const goToLoginPage = (navigate) => {
-    navigate("/login")
+    navigate.push("/login")
 }
 
 export const goToApplicationFormPage = (navigate) => {
-    navigate("/trips/application")
+    navigate.push("/trips/application")
 }
 
 export const goToCreateTripPage = (navigate) => {
-    navigate("/admin/trips/create")
+    navigate.push("/admin/trips/create")
 }
 
 export const goToListTripsPage = (navigate) => {
-    navigate("/trips/list")
+    navigate.push("/trips/list")
 }
 
 export const goToTripDetailsPage = (navigate) => {
-    navigate("/admin/trips/:id")
+    navigate.push("/admin/trips/:id")
 }
 
 export const goToAdminHomePage = (navigate) => {
-    navigate("/admin/trips/list")
+    navigate.push("/admin/trips/list")
 }
 
 export const goBack = (navigate) => {
-    navigate(-1)
+    navigate.push(-1)
 }

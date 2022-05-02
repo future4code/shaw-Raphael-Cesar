@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import axios from "axios";
-import { navigate, useNavigate } from "react-router-dom";
-import labex from "./img/"
-import { Button } from "@mui/material";
-
+import React from "react";
+import useForm from "../hooks/useForm"
+import {useNavigate} from "react-router-dom";
+import {goToHomePage} from "../routes/coordinator"
+import {login} from "../service/Service"
+import useUnProtectedPage from "../hooks/useunProtectedPage"
 
 
 
 
 const loginpage = () => {
  
-    useUnprotectedPage()
+    useUnProtectedPage()
     
     const navigate = useNavigate();
 
@@ -21,23 +21,13 @@ const loginpage = () => {
 
     const onClickLogin = (event) => {
         event.preventDefault();
-        const body = form;
-        axios
-        .post(`${BASE_URL}/login`, body)
-        .then((res) => {
-            localStorage.setItem("token", res.data.token)
-            localStorage.setItem("email", form.email)
-            navigate.push("/admin/trips/list")
-        })
-        .catch((err) => {
-            alert(err.response.data.message)
-        })
+        login(form, navigate)
+        
     }
     return(
-        <Main>
-            <Container>
-                
-                <Form onSubmit={onclickLogin}>
+        <div>
+            <h1> login</h1>
+            <Form onSubmit={onClickLogin}>
                     <input
                         placeholder="E-mail"
                         type={"email"}
@@ -50,19 +40,23 @@ const loginpage = () => {
                         placeholder="Senha"
                         type={"password"}
                         name={"Password"}
-                        value={form.email}
+                        value={form.password}
                         onChange={onChange}
                         required
                     />
                     
-                </Form>
+                
                 <Botoes>
-                    <Button onClick={() => goToHomePage(navigate)}>Voltar</Button>
-                    <Button type={"submit"}>Entrar</Button>
+                    <button onClick={() => goToHomePage(navigate)}>Voltar</button>
+                    <button type={"submit"}>Entrar</button>
                 </Botoes>
-            </Container>
+            </Form>
+        </div>
+                
+                
+  
 
-        </Main>
+        
     )
 }
 export default loginpage
