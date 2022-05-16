@@ -1,17 +1,17 @@
-import { useLayoutEffect } from "react"
-import { useNavigate } from "react-router-dom"
-import { goToLogin } from "../routes/Coordinates"
+import { useLayoutEffect } from "react";
+import {  useNavigate } from "react-router-dom";
+import { goToLogin } from "../routes/coordinator";
 
+const useProtectedPage = () => {
+  const navigate = useNavigate();
 
+  useLayoutEffect(() => {
+    const token = window.localStorage.getItem("token");
 
-const UseProtectedPages = () => {
+    if (!token) {
+      goToLogin(navigate);
+    }
+  }, [navigate]);
+};
 
-    const navigate = useNavigate()
-    useLayoutEffect (() => {
-        const token = localStorage.getItem("token")
-        if (!token){
-            goToLogin(navigate)
-        }
-    }, [navigate])
-}
-export default UseProtectedPages
+export default useProtectedPage;
