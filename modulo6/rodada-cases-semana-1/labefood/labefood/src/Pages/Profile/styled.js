@@ -1,66 +1,71 @@
-import { styled } from 'styled-components';
-;
+import styled from "styled-components";
 
-export const Main = styled.div`
-
-    height: 100vh;
+export const ProfilePageContainer = styled.section`
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; 
 
 `
 
-export const Perfil = styled.div`
-
-    text-align: center;
-    height: 5%;
-    border-bottom: 1px solid black;
-`
-export const Informacoes = styled.div`
-
+export const PersonalInformationProfileArea = styled.div`
     display: flex;
     flex-direction: column;
-    height: 100%;
-`
-export const PerfilPessoa = styled.div`
-
-    height: 20%;
-    display: flex;
+    align-items: center;
     justify-content: space-between;
-    div:nth-child(1) {
-        width: 80%;
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-    }
-    div:nth-child(2){
-        width: 20%;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        cursor:pointer;
-    }
-`
-export const EnderecoPessoa = styled.div`
+    align-items: flex-start;
+    padding: 16px;
+    width: 91vw;
 
-    height: 10%;
-    background-color: lightgray;
-    display: flex;
-    justify-content: space-between;
-    div:nth-child(1) {
-        width: 88%;
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-    div:nth-child(2){
-        width: 20%;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        cursor: pointer;
+    h5{
+        margin: 0;
+        margin-bottom: 8px;
+        font-size: 16px;
+        padding: 0 16px;
+        font-weight: normal;
     }
 `
-export const HistoricoCompras = styled.div`
-    height: 70%;
+export const ButtonContainer = styled.div`
+    position: absolute;
+    right: 16px;
+`
+export const GrayText = styled.div`
+    letter-spacing: -0.39px;
+    color: #b8b8b8; 
+    margin: 0;
+    margin-bottom: 8px;
+    font-size: 16px;
+    padding: 0 16px;
+`
+
+export const AddressInformation = styled(PersonalInformationProfileArea)`
+    background-color: #eee;
+`
+
+export const OrderHistoryArea = styled.div`
+    padding: 16px;
+    width: 91vw;
+    margin-bottom: 12vw;
+
+    h5{
+        margin: 0 0 8px;
+        font-size: 16px;
+        letter-spacing: -0.39px;
+        color: #000000;
+        font-weight: normal;
+        
+    }
+`
+export const OrderHistoryContainer = styled.div`
+    padding: 16px;
+`
+
+export const Line = styled.div`
+    margin-bottom: 8px;
+    border-bottom: 1px solid  black;
+`
+
+export const BotaoLogout = styled.div`
+    position: relative;
+    margin-left: 30vw;
 `

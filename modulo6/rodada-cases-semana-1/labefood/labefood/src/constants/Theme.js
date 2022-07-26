@@ -1,26 +1,21 @@
-import { createTheme } from '@mui/material';
+import { createMuiTheme } from '@mui/material'
+import { prymaryColors, secondaryColors } from './colors'
 
-const theme = createTheme({
+
+const theme = createMuiTheme({
   palette: {
     primary: {
-      // light: will be calculated from palette.primary.main,
-      main: '#FF3B30',
-      // dark: will be calculated from palette.primary.main,
-      // contrastText: will be calculated to contrast with palette.primary.main
+      main: prymaryColors,
+      contrastText: "#000000"
     },
     secondary: {
-      light: '#FF9500',
-      main: '#FFCC00',
-      // dark: will be calculated from palette.secondary.main,
-      contrastText: '#E86E5A',
+      main: secondaryColors,
+      contrastText: "#000000"
     },
-    // Used by `getContrastText()` to maximize the contrast between
-    // the background and the text.
-    contrastThreshold: 3,
-    // Usado pelas funções abaixo para mudança de uma cor de luminância por aproximadamente
-    // dois índices dentro de sua paleta tonal.
-    // Por exemplo, mude de Red 500 para Red 300 ou Red 700.
-    tonalOffset: 0.2,
-  },
+    text: {
+      primary: "#000000"
+    }
+  }
 });
+
 export default theme
