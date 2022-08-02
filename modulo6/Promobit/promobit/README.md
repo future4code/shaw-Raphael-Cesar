@@ -3,7 +3,7 @@ PROMOBIT Este projeto tem como objetivo criar um site de videos usando de result
 
 🛠 Tecnologias As seguintes ferramentas foram usadas na construção do projeto:
 
-React CSS e Estilização com Styled-Components Integração de API com o Axios UUID axios React-Router-Dom Hooks
+React, CSS, Estilização com Styled-Components, Integração de API com o Axios UUID, axios, React-Router-Dom e Hooks.
 ## API utilizada
 https://www.themoviedb.org/
 ### Endereço surge
