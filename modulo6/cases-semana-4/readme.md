@@ -2,26 +2,26 @@
 
 Este projeto de Back-end foi proposto pela Labenu para treinar a participação em projetos técnicos de processos de seleção. O sistema controla o registro de produtos.
 
-## Endpoints:
+## 🎯 Endpoints:
 
-SignUp:
-Endpoint para cadastrar um administrador no sistema. Retorna um token de acesso para realizar a manipulação dos produtos. Recebe um body com as seguintes informações:
-
+- SignUp: Endpoint para cadastrar um administrador no sistema. Retorna um token de acesso para realizar a manipulação dos produtos. Recebe um body com as seguintes informações:
+```
 {
     "name": "", 
     "email": "", 
     "password": ""
 }
-SignIn:
-Endpoint para fazer o login do administrador no sistema. Retorna um token de acesso.
-
+```
+- SignIn: Endpoint para fazer o login do administrador no sistema. Retorna um token de acesso.
+```
 {
     "email": "",
     "password": ""
 }
-Register:
-Endpoint para cadastrar um produto no sistema. Recebe o token via headers e um body com as seguintes informações:
+```
 
+- Register: Endpoint para cadastrar um produto no sistema. Recebe o token via headers e um body com as seguintes informações:
+```
 {
     "photo": "", 
     "name": "", 
@@ -30,29 +30,26 @@ Endpoint para cadastrar um produto no sistema. Recebe o token via headers e um b
     gender": "", 
     "description": ""
 }
-Details:
-Endpoint para pegar os detalhes de um produto. Recebe o nome do produto por parâmetro e também um token de autorização via headers.
-
-### Link para a documentação:
+```
+- Details: Endpoint para pegar os detalhes de um produto. Recebe o nome do produto por parâmetro e também um token de autorização via headers.
 
 
-https://documenter.getpostman.com/view/20353584/VUjTihxS
-
-### Tecnologias utilizadas:
-TypeScript;
-Node.js;
-MySQL;
-Bibliotecas utilizadas:
-Express;
-CORS;
-Dotenv;
-Knex;
-Bcrypt;
-Jsonwebtoken;
-uuid.
+###  🛠 Tecnologias utilizadas:
+- TypeScript;
+- Node.js;
+- MySQL;
+### 📚 Bibliotecas utilizadas:
+- Express;
+- CORS;
+- Dotenv;
+- Knex;
+- Bcrypt;
+- Jsonwebtoken;
+- uuid.
 
 
-## Tabelas sql:
+## 📊 Tabelas Sql:
+```
 CREATE TABLE amaro_sellers (
     id VARCHAR(255) PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -69,3 +66,8 @@ CREATE TABLE amaro_products (
     gender VARCHAR(255) NOT NULL
 
 );
+```
+### Link para a documentação:
+
+
+https://documenter.getpostman.com/view/20353584/VUjTihxS
