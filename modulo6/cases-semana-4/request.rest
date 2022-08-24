@@ -1,0 +1,39 @@
+# @name SignUp
+
+POST http://localhost:3306/seller/signUp Content-Type: application/json
+
+{
+"name": "marisa", "email": "marisa@labenu.com", "password": "mulher"
+}
+
+###
+
+@token = {{SignUp.response.body.token}}
+
+###
+
+# @name SignIn
+
+POST http://localhost:3306/seller/signIn Content-Type: application/json
+
+{
+"email": "marisa@labenu.com", "password": "mulher"
+}
+
+###
+
+@token = {{SignIn.response.body.token}}
+
+###
+
+POST http://localhost:3306/product/register Content-Type: application/json Authorization: {{token}}
+
+{
+"photo": "https://cdn.pixabay.com/photo/2019/03/12/13/26/jeans-4050815_960_720.jpg", "name": "jeans", "price": "156.00", "type": "calça", "gender": "masculino", "description": "Tamanhos disponíveis: P, M, G"
+}
+
+###
+
+GET http://localhost:3306/product/details/Calça jeans Content-Type: application/json Authorization: {{token}}
+
+###
